@@ -31,23 +31,25 @@ def calculate_average_word_length(text):
 
 def count_paragraphs(text):
     '''
-    return the number of sentences
-    sentences end with ., !, or ?.
+    Return the number of paragraphs
+    Paragraphs are separated by one or more empty lines
+    Return 1 for any empty string
     '''
 
     if not text.strip():
         return 1
 
+    paragraphs = re.split(r'\n\s*\n', text.strip())
+    return len(paragraphs)
+
+def count_sentence(text):
+    '''
+    Return the number of sentences
+    Sentences end with ., ! or ?.
+    Return 1 for an empty string
+    '''
+    if not text.strip():
+        return 1
+
     sentences = [s for s in re.split(r'[.!?]+', text) if s.strip()]
     return len(sentences)
-
-    # take in a string and return the number of paragraphs as an integer
-    # define paragraphs based on empty lines between blocks of text
-    # display the count of paragraphs
-    # an empty string should return 1
-
-# def count_sentence(str):
-#     # take in a string and return the number of sentences as an integer
-#     # define sentences based on punctuation marks such as periods, exclamation marks, question marks
-#     # display count of sentences
-#     # an empty string should return 1
