@@ -2,23 +2,36 @@
 
 '''
 '''
-from pythonAssessment import *
+import sys
 import re
+from pythonAssessment import *
 
 def main():
+    # declaring file path
+    file = './News Article for Python Assessment.txt'
+
     # Opening the file for reading and loading text variable
-    with open('./News Article for Python Assessment.txt', 'r', encoding='utf-8') as file:
-        text = file.read()
+    try:
+        with open(file, 'r', encoding='utf-8') as openfile:
+            text = openfile.read()
+    # Error handling for the file
+    except IOError as e:
+        print( "I/O error({0}): {1}".format(e.errno, e.strerror) )
+        return
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
+        return
 
     # Check if it opened successfully
     if not text:
-        print(f'Failed to open text file')
+        print('Failed to open text file')
         return
 
     print('Text file opened successfully!!!')
 
     # count_specific_word("ACME", text)
-    print(identify_most_common_word(text))
+    # identify_most_common_word(text)
+    print(calculate_average_word_length("hello there"))
 
     # print(f"the value of name is: {repr(__name__)}")
 
