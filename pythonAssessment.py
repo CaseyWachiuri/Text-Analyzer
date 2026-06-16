@@ -3,8 +3,8 @@
 import re
 from collections import Counter
 
-def count_specific_word(search, text_file):
-    words = re.findall(r'\b\w+\b', text_file.lower())
+def count_specific_word(text, search):
+    words = re.findall(r'\b[a-zA-Z0-9]+\b', text.lower())
     result = words.count(search.lower())
     if not result:
         return 0
