@@ -22,18 +22,13 @@ def main():
         print("Unexpected error:", sys.exc_info()[0])
         return
 
-    # Check if it opened successfully
-    if not text:
-        print('Failed to open text file')
-        return
-
     print('Text file opened successfully!!!')
 
-    # count_specific_word("ACME", text)
-    # identify_most_common_word(text)
-    # calculate_average_word_length(text)
-    # count_paragraphs(text)
-    print(count_sentence(text))
+    count_specific_word("", text)
+    identify_most_common_word(text)
+    calculate_average_word_length(text)
+    count_paragraphs(text)
+    count_sentence(text)
 
     # print(f"the value of name is: {repr(__name__)}")
 
