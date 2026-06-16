@@ -22,9 +22,22 @@ def identify_most_common_word(text):
 
 def calculate_average_word_length(text):
     words = re.findall(r'\b[a-zA-Z0-9]+\b', text.lower())
-    
+
     if not words:
         return 0
+
+    print(words)
+
+    total_length = sum(len(word) for word in words)
+    
+    word_length = 0
+    for word in words:
+        word_length += len(word)
+        print(word_length)
+        # print(sum(word_length))
+
+    print(len(words))
+    return total_length
 
     # total_length = sum()
     # total_length = sum(len(word) for word in words)

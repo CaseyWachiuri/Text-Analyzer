@@ -31,7 +31,7 @@ def main():
 
     # count_specific_word("ACME", text)
     # identify_most_common_word(text)
-    print(calculate_average_word_length("hello there"))
+    print(calculate_average_word_length(text))
 
     # print(f"the value of name is: {repr(__name__)}")
 
