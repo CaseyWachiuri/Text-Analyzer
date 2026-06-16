@@ -24,12 +24,6 @@ def main():
 
     print('Text file opened successfully!!!')
 
-    count_specific_word("", text)
-    identify_most_common_word(text)
-    calculate_average_word_length(text)
-    count_paragraphs(text)
-    count_sentence(text)
-
     # print(f"the value of name is: {repr(__name__)}")
 
 if __name__ == "__main__":
