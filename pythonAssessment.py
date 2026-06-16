@@ -17,16 +17,23 @@ def identify_most_common_word(text):
     if not words:
         return None
 
-    counts = Counter(words)
-    return counts.most_common()
-    # return the most common word as a string
-    # An empty string should return None
+    counts = Counter(words).most_common(1)[0][0]
+    return counts
 
-# def calculate_average_word_length(str):
-#     # take in str and return the average word length as float
-#     # exclude punctuation marks and special characters from the word length (probably use has and all)
-#     # return 0 for empty string
-# 
+def calculate_average_word_length(text):
+    words = re.findall(r'\b[a-zA-Z0-9]+\b', text.lower())
+    
+    if not words:
+        return 0
+
+    # total_length = sum()
+    # total_length = sum(len(word) for word in words)
+    # return total_length/len(words)
+
+    # take in str and return the average word length as float
+    # exclude punctuation marks and special characters from the word length (probably use has and all)
+    # return 0 for empty string
+
 # def count_paragraphs():
 #     # take in a string and return the number of paragraphs as an integer
 #     # define paragraphs based on empty lines between blocks of text
