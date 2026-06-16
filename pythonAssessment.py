@@ -29,20 +29,23 @@ def calculate_average_word_length(text):
     total_length = sum(len(word) for word in words)
     return total_length/len(words)
 
-    # total_length = sum()
-    # total_length = sum(len(word) for word in words)
-    # return total_length/len(words)
+def count_paragraphs(text):
+    '''
+    return the number of sentences
+    sentences end with ., !, or ?.
+    '''
 
-    # take in str and return the average word length as float
-    # exclude punctuation marks and special characters from the word length (probably use has and all)
-    # return 0 for empty string
+    if not text.strip():
+        return 1
 
-# def count_paragraphs():
-#     # take in a string and return the number of paragraphs as an integer
-#     # define paragraphs based on empty lines between blocks of text
-#     # display the count of paragraphs
-#     # an empty string should return 1
-# 
+    sentences = [s for s in re.split(r'[.!?]+', text) if s.strip()]
+    return len(sentences)
+
+    # take in a string and return the number of paragraphs as an integer
+    # define paragraphs based on empty lines between blocks of text
+    # display the count of paragraphs
+    # an empty string should return 1
+
 # def count_sentence(str):
 #     # take in a string and return the number of sentences as an integer
 #     # define sentences based on punctuation marks such as periods, exclamation marks, question marks
