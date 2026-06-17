@@ -42,7 +42,7 @@ def count_paragraphs(text):
     paragraphs = re.split(r'\n\s*\n', text.strip())
     return len(paragraphs)
 
-def count_sentence(text):
+def count_sentences(text):
     '''
     Return the number of sentences
     Sentences end with ., ! or ?.
