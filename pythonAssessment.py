@@ -38,9 +38,10 @@ def count_paragraphs(text):
 
     if not text.strip():
         return 1
+    else:
+        paragraphs = re.split(r'\n\s*\n', text.strip())
+        return len(paragraphs)
 
-    paragraphs = re.split(r'\n\s*\n', text.strip())
-    return len(paragraphs)
 
 def count_sentences(text):
     '''
