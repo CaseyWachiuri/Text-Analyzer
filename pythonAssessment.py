@@ -52,5 +52,10 @@ def count_sentences(text):
     if not text.strip():
         return 1
 
-    sentences = [s for s in re.split(r'[.!?]+', text) if s.strip()]
+    sentences = []
+    for s in re.split(r'[.!?]+', text):
+        if s.strip():
+            sentences += [s]
+
+    # sentences = [s for s in re.split(r'[.!?]+', text) if s.strip()]
     return len(sentences)
