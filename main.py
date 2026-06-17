@@ -25,7 +25,7 @@ def main():
     print('Text file opened successfully!!!')
 
     # print(f"the value of name is: {repr(__name__)}")
-    # print(count_sentences(text))
+    # print(count_specific_word(text, 'the'))
 
 if __name__ == "__main__":
     main()

@@ -5,11 +5,17 @@ from collections import Counter
 
 def count_specific_word(text, search):
     words = re.findall(r'\b[a-zA-Z0-9]+\b', text.lower())
-    result = words.count(search.lower())
-    if not result:
-        return 0
 
-    return result
+    count = 0
+    i = 0
+
+    while i < len(words):
+        if words[i] == search.lower():
+            count += 1
+
+        i += 1
+
+    return count
 
 def identify_most_common_word(text):
     words = re.findall(r'\b\w+\b', text.lower())
